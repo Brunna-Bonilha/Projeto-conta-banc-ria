@@ -1,11 +1,66 @@
 import readlinesync = require("readline-sync");
 import { colors } from './src/util/Colors';
+import { Conta } from "./model/Conta";
+
 
 export function main() {
 
-    let opcao: number;
+   let opcao: number;
 
-    while (true) {
+   //Novas instâncias da classe conta (objetos)
+
+   const c1: Conta = new Conta(1, 1234, 1, 'Julia Castro', 800000.00);
+   const c2: Conta = new Conta(1, 1234, 2, 'Marcella Sanches', 600000.00);
+
+   // Visualizar os dados da Conta c1
+   c1.visualizar();
+
+   // Visualizar os dados da Conta c2
+   c2.visualizar();
+
+   // Visualizar o Saldo da Conta c1
+   console.log(`\nO Saldo da conta 01 é: ${c1.saldo}`);
+
+   // Alterando o Saldo da conta c2
+   c2.saldo = 900000.00;
+
+   //Visualizando o Saldo da Conta c2 depois de atualizar o valor
+   console.log(`\nO Saldo da conta c2 é: ${c2.saldo}`);
+
+   console.log(\nSacar 100.00 Reais da conta c1: ${c1.sacar(100)});
+   c1.visualizar();
+
+   console.log(`\nSacar 100000.00 Reais da conta c2: ${c2.sacar(100000.00)}`);
+   c2.visualizar
+
+   //Depositar nas Contas
+   console.log(`\nDepositar 200000.00 Reais da Conta c1: `);
+   c1.depositar(200000);
+   c1.visualizar();
+   
+   //Novas instâncias da classe contaCorrente (objetos)
+
+   const cc1: ContaCorrente = new Conta(1, 1234, 1, 'cliente1', 1000000.00, 100000);
+   const cc2: ContaCorrente = new Conta(1, 1234, 2, 'cliente2', 1000.00);
+
+   cc1.visualizar();
+   cc2.visualizar();
+
+   //Novas instâncias da classe contaCorrente (objetos)
+
+   const cc1: ContaCorrente = new Conta(1, 1234, 1, 'cliente1', 1000000.00, 100000);
+   const cc2: ContaCorrente = new Conta(1, 1234, 2, 'cliente2', 1000.00);
+
+   cc1.visualizar();
+   cc2.visualizar();
+
+      //Novas instâncias da classe contaPoupança (objetos)
+
+      const cp1: ContaPoupança = new Conta(1, 1234, 2, 'cliente2', 2000.00);
+      cp1.visualizar();
+      
+
+   while (true) {
 
         console.log(colors.bg.blackbright, colors.fg.magentastrong, 
                     "*****************************************************");

@@ -1,0 +1,29 @@
+import { Conta } from "./Conta"{
+    
+export class contaPoupança extends Conta{
+
+     private _aniversario: number;
+
+    
+	constructor(numero: number, agencia: number, tipo: number, titular: string,
+        saldo: number, aniversario: number) {
+	super(numero, agencia, tipo, titular, saldo);
+}
+
+public get aniversario(): number{
+    return this._aniversario;
+}
+
+public set aniversario(value: number): {
+    return this._aniversario - value;
+}
+
+public depositor(valor: number): void{
+    this._saldo = this._saldo + valor;
+}
+
+public visualizar(){
+    super.visualizar();
+    console.log(`O dia do aniversário da conta é: ${this._aniversario}`)
+}
+}
