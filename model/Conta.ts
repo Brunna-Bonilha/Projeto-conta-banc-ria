@@ -1,7 +1,7 @@
-export class Conta{
+export abstract class Conta {
 
     private _numero: number;
-    private agencia: number;
+    private _agencia: number;
     private _tipo: number;
     private _titular: string;
     private _saldo: number;
